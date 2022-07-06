@@ -66,7 +66,7 @@ def eval_forecasting(model, data, train_slice, valid_slice, test_slice, scaler, 
             test_pred_inv = scaler.inverse_transform(test_pred)
             test_labels_inv = scaler.inverse_transform(test_labels)
 
-	test_pred = test_pred.reshape(ori_shape)
+        test_pred = test_pred.reshape(ori_shape)
         test_labels = test_labels.reshape(ori_shape)
             
         out_log[pred_len] = {
