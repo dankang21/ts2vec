@@ -68,6 +68,8 @@ def eval_forecasting(model, data, train_slice, valid_slice, test_slice, scaler, 
 
         test_pred = test_pred.reshape(ori_shape)
         test_labels = test_labels.reshape(ori_shape)
+        test_pred_inv = test_pred.reshape(ori_shape)
+        test_labels_inv = test_labels.reshape(ori_shape)
             
         out_log[pred_len] = {
             'norm': test_pred,
