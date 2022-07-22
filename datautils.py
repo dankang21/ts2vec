@@ -163,8 +163,8 @@ def load_forecast_csv(name, window_in, univar=False):
             test_slice = slice(int(0.8 * len(data)), None)
         else:
             train_slice = slice(None, int(0.8 * len(data))-(672+window_in))
-            valid_slice = slice(int(0.6 * len(data)), int(0.8 * len(data)))
-            test_slice = slice(672+window_in, None)
+            valid_slice = slice(int(0.8 * len(data))-(672+window_in), int(1.0 * len(data))-(672+window_in))
+            test_slice = slice(int(1.0 * len(data))-(672+window_in), None)
             print(test_slice)
 
     scaler = StandardScaler().fit(data[train_slice])
