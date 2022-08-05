@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
     elif args.loader == 'forecast_csv':
         task_type = 'forecasting'
-        data, train_slice, valid_slice, test_slice, scaler, pred_lens, n_covariate_cols = datautils.load_forecast_csv(args.dataset)
+        data, train_slice, valid_slice, test_slice, scaler, pred_lens, n_covariate_cols = datautils.load_forecast_csv(args.dataset, args.window_in)
         train_data = data[:, train_slice]
 
     elif args.loader == 'forecast_csv_univar':
