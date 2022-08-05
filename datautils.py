@@ -135,7 +135,7 @@ def _get_time_features(dt):
 
 
 def load_forecast_csv(name, window_in, univar=False):
-    data = pd.read_csv(f'datasets/{name}.csv', index_col='date', parse_dates=True)
+    data = pd.read_csv(f'datasets/{name}.csv', index_col='datetime', parse_dates=True)
     dt_embed = _get_time_features(data.index)
     n_covariate_cols = dt_embed.shape[-1]
 
